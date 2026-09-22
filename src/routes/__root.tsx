@@ -77,10 +77,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Jack — 3D Creator" },
+      { title: "Jack -- 3D Creator" },
       { name: "description", content: "The portfolio of Jack, a 3D creator crafting distinctive digital worlds, brands, and experiences." },
       { name: "author", content: "Jack" },
-      { property: "og:title", content: "Jack — 3D Creator" },
+      { property: "og:title", content: "Jack -- 3D Creator" },
       { property: "og:description", content: "Distinctive 3D work, motion, branding, and digital experiences by Jack." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

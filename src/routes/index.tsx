@@ -20,13 +20,13 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Jack — 3D Creator" },
+      { title: "Jack -- 3D Creator" },
       {
         name: "description",
         content:
           "Jack is a 3D creator crafting memorable digital worlds, identities, motion, and web experiences.",
       },
-      { property: "og:title", content: "Jack — 3D Creator" },
+      { property: "og:title", content: "Jack -- 3D Creator" },
       {
         property: "og:description",
         content: "3D worlds, motion, branding, and digital experiences by Jack.",
