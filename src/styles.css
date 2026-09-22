@@ -19,6 +19,7 @@
  */
 
 @theme inline {
+  --font-sans: "Kanit", sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -59,12 +60,20 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-ink: var(--ink);
+  --color-frost: var(--frost);
+  --color-paper: var(--paper);
+  --color-project-border: var(--project-border);
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --radius: 0.5rem;
+  --ink: oklch(0.16 0 0);
+  --frost: oklch(0.9 0.018 235);
+  --paper: oklch(1 0 0);
+  --project-border: oklch(0.9 0.018 235);
+  --background: var(--ink);
+  --foreground: var(--frost);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
@@ -134,11 +143,58 @@
 
 @layer base {
   * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     border-color: var(--color-border);
   }
 
+  html,
   body {
+    min-height: 100%;
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    overflow-x: clip;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  img {
+    display: block;
+  }
+}
+
+@utility hero-heading {
+  background: linear-gradient(180deg, oklch(0.52 0.018 255) 0%, oklch(0.83 0.035 230) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+@utility contact-gradient {
+  background: linear-gradient(123deg, oklch(0.16 0.075 320) 7%, oklch(0.51 0.248 331) 37%, oklch(0.48 0.202 302) 72%, oklch(0.53 0.17 51) 100%);
+  box-shadow: 0 4px 4px oklch(0.51 0.248 331 / 0.25), 4px 4px 12px oklch(0.48 0.202 302) inset;
+  outline: 2px solid var(--paper);
+  outline-offset: -3px;
+}
+
+@utility project-surface {
+  background-color: var(--ink);
+  border-color: var(--project-border);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
